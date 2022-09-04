@@ -16,12 +16,18 @@ public class ImageController {
     @Autowired
     private StorageService storageService;
 
+    @GetMapping("")
+    public String HelloController(){
+        return "Hello From Controller";
+    }
+
     @PostMapping("/image")
     public ResponseEntity<?> uploadImage(@RequestParam("image") MultipartFile file) throws IOException {
         String uploadImage = storageService.uploadImage(file);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(uploadImage);
     }
+    //Request params should match the Request from the Postman as well.
 
     @GetMapping("/{fileName}")
     public ResponseEntity<?> downloadImage(@PathVariable("fileName") String fileName){
