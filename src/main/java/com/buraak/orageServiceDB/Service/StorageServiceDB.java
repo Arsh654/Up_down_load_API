@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 @Service
-public class StorageService {
+public class StorageServiceDB {
 
     @Autowired
     private StorageRepo storageRepo;
@@ -19,7 +19,7 @@ public class StorageService {
     //2 class :- upload and download
 
     public String uploadImage(MultipartFile file) throws IOException {
-        //Return the Image Data Object
+        //store the Image Data Object
 
         ImageData imageData = storageRepo.save(ImageData.builder()
                 .name(file.getOriginalFilename())
