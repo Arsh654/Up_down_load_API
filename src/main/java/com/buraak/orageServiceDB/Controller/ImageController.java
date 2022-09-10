@@ -1,6 +1,6 @@
 package com.buraak.orageServiceDB.Controller;
 
-import com.buraak.orageServiceDB.Service.StorageService;
+import com.buraak.orageServiceDB.Service.StorageServiceDB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -14,7 +14,7 @@ import java.io.IOException;
 public class ImageController {
 
     @Autowired
-    private StorageService storageService;
+    private StorageServiceDB storageService;
 
     @GetMapping("")
     public String HelloController(){
